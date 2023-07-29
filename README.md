@@ -2,6 +2,8 @@
 
 This is reproducible on net 6, 7, and 8 preview 6.
 
+A more "in the wild" repro can be found in https://github.com/tgstation/tgstation-server/tree/fc007543dbfa888cd274e5a54a512e830641fd1b by running the `tests/Tgstation.Server.Host.Tests` project.
+
 ## No Coverage
 
 For guaranteed clean execuion, execute with:
