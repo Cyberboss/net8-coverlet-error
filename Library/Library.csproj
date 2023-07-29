@@ -6,8 +6,8 @@
     <DebugType>$(PdbType)</DebugType>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
+  <PropertyGroup Condition="'$(ShowRepro)'=='true'">
+    <DefineConstants>$(DefineConstants);SHOW_REPRO</DefineConstants>
+  </PropertyGroup>
 
 </Project>

@@ -2,7 +2,6 @@
 <RunSettings>
   <RunConfiguration>
     <CollectSourceInformation>true</CollectSourceInformation>
-    <TestSessionTimeout>3600000</TestSessionTimeout>
   </RunConfiguration>
   <DataCollectionRunSettings>
     <DataCollectors>

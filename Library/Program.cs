@@ -1,24 +1,15 @@
 ﻿using Microsoft.Extensions.Logging;
 
-using Newtonsoft.Json;
-
 namespace Library
 {
-	/// <summary>
-	/// File logging configuration options.
-	/// </summary>
 	public class Program
 	{
-		/// <summary>
-		/// Default value for <see cref="LogLevel"/>.
-		/// </summary>
+#if SHOW_REPRO
 		const LogLevel DefaultLogLevel = LogLevel.Debug;
-
-		/// <summary>
-		/// The minimum <see cref="Microsoft.Extensions.Logging.LogLevel"/> to display in logs.
-		/// </summary>
-		[JsonProperty]
-		LogLevel LogLevel { get; set; }
+		LogLevel LogLevel { get; set; } = DefaultLogLevel;
+#else
+		LogLevel LogLevel { get; set; } = LogLevel.Debug;
+#endif
 
 		/// <summary>
 		/// Program entrypoint.
