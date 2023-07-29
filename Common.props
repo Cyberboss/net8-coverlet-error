@@ -1,0 +1,6 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <NetVersion>8</NetVersion>
+    <PdbType>PdbOnly</PdbType>
+  </PropertyGroup>
+</Project>
