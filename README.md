@@ -31,8 +31,18 @@ In [Common.props](./Common.props) change `PdbType` to `PdbOnly` or `Full`. Runni
    at Coverlet.Collector.DataCollection.CoverletCoverageCollector.OnSessionStart(Object sender, SessionStartEventArgs sessionStartEventArgs) in /_/src/coverlet.collector/DataCollection/CoverletCoverageCollector.cs:line 143.
 ```
 
-## Only Workaround
+## Workaround 1
 
-In [Common.props](./Common.props) set `ShowRepro` to `false`. The only thing this does is inline the usage of a `const enum` but somehow it fixes both of the above cases.
+Change the [Library.csproj](./Library/Library.csproj) project from `Microsoft.NET.Sdk.Web` to `Microsoft.NET.Sdk` and add the following project reference to get it to compile.
+
+```xml
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+  </ItemGroup>
+```
+
+## Workaround 2
+
+In [Common.props](./Common.props) set `ShowRepro` to `false`. The only thing this does is inline the usage of the `const Microsoft.Extensions.Logging.LogLevel` enum.
 
 This is reproducible on net 6, 7, and 8 preview 6.
