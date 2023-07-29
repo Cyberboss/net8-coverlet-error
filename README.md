@@ -6,7 +6,7 @@ A more "in the wild" repro can be found in https://github.com/tgstation/tgstatio
 
 ## No Coverage
 
-For guaranteed clean execuion, execute with:
+For guaranteed clean execution, execute with:
 
 Powershell:
 ```ps
@@ -37,7 +37,7 @@ In [Common.props](./Common.props) change `PdbType` to `PdbOnly` or `Full`. Runni
 
 ## Workaround 1
 
-In [Common.props](./Common.props) set `ShowRepro` to `false`. The only thing this does is inline the usage of the `const Microsoft.Extensions.Logging.LogLevel` enum.
+In [Common.props](./Common.props) set `ShowRepro` to `false`. The only thing this does is inline the usage of the `const Microsoft.Extensions.Logging.LogLevel` `enum`.
 
 ## Workaround 2
 
