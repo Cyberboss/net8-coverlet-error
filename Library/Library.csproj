@@ -9,5 +9,9 @@
   <PropertyGroup Condition="'$(ShowRepro)'=='true'">
     <DefineConstants>$(DefineConstants);SHOW_REPRO</DefineConstants>
   </PropertyGroup>
+  
+  <ItemGroup Condition="'$(AddExplicitProjectReference)'=='true'">
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+  </ItemGroup>
 
 </Project>

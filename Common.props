@@ -3,5 +3,6 @@
     <NetVersion>7</NetVersion>
     <PdbType>Portable</PdbType>
     <ShowRepro>true</ShowRepro>
+    <AddExplicitProjectReference>false</AddExplicitProjectReference>
   </PropertyGroup>
 </Project>

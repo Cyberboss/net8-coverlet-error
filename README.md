@@ -1,5 +1,7 @@
 # Coverlet Bug Demo
 
+This is reproducible on net 6, 7, and 8 preview 6.
+
 ## No Coverage
 
 For guaranteed clean execuion, execute with:
@@ -33,16 +35,8 @@ In [Common.props](./Common.props) change `PdbType` to `PdbOnly` or `Full`. Runni
 
 ## Workaround 1
 
-Change the [Library.csproj](./Library/Library.csproj) project from `Microsoft.NET.Sdk.Web` to `Microsoft.NET.Sdk` and add the following project reference to get it to compile.
-
-```xml
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
-  </ItemGroup>
-```
+In [Common.props](./Common.props) set `ShowRepro` to `false`. The only thing this does is inline the usage of the `const Microsoft.Extensions.Logging.LogLevel` enum.
 
 ## Workaround 2
 
-In [Common.props](./Common.props) set `ShowRepro` to `false`. The only thing this does is inline the usage of the `const Microsoft.Extensions.Logging.LogLevel` enum.
-
-This is reproducible on net 6, 7, and 8 preview 6.
+In [Common.props](./Common.props) set `ShowRepro` to `true` and `AddExplicitProjectReference` to `true`. The only thing this does is explicitly add the `Microsoft.Extensions.Logging.Abstractions` package which is included by default in the AspNetCore SDK.
